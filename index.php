@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Dischi</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
 </head>
 <body>
-    <div id="app">
-        <div v-for="disco in dischi" :key="disco.title" class="disco">
-            <img :src="disco.poster" alt="Poster">
-            <h2>{{ disco.title }}</h2>
-            <p>{{ disco.author }}</p>
-            <p>{{ disco.year }}</p>
-            <p>{{ disco.genre }}</p>
-        </div>
+<div id="app" class="container mt-4">
+        <div class="row">
+            <div v-for="disco in dischi" :key="disco.title" class="col-md-4 mb-4">
+                <div class="card">
+                    <img :src="disco.poster" class="card-img-top" alt="Poster">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ disco.title }}</h5>
+                        <p class="card-text">{{ disco.author }}</p>
+                        <p class="card-text">{{ disco.year }}</p>
+                        <p class="card-text">{{ disco.genre }}</p>
+                    </div>
+                </div>
+            </div>
         <!-- <div class="add-disco">
             <h2>Aggiungi un nuovo disco:</h2>
             <input type="text" v-model="newDisco.title" placeholder="Titolo">
